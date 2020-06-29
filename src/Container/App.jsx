@@ -4,7 +4,6 @@ import { cloneDeep } from "lodash";
 import LoadingGear from "../Assets/loadingGear.svg";
 import Modal from "../Components/Modal";
 import Table from "../Components/Table";
-import browserDetection from "../Utils/browserDetection";
 
 const App = () => {
 	const [assetsList, setAssetsList] = useState([]);
@@ -12,32 +11,6 @@ const App = () => {
 	const [history, setHistory] = useState([]);
 	const [openId, setOpenId] = useState("");
 	const [loadingHistory, setLoadingHistory] = useState(false);
-	const [userInfo, setUserInfo] = useState({});
-
-	useEffect(() => {
-		async function fetchData() {
-			axios({
-				method: "GET",
-				url: "http://ip-api.com/json",
-				responseType: "json",
-			})
-				.then((resp) => {
-					setUserInfo({
-						browser: browserDetection(navigator),
-						ip: resp?.query,
-						lat: resp?.lat,
-						lon: resp?.lon,
-						city: resp?.city,
-						country: resp?.country,
-					});
-				})
-				.catch((e) => {
-					console.log(e.toString(), e);
-				});
-		}
-
-		fetchData();
-	}, [userInfo.ip]);
 
 	useEffect(() => {
 		async function fetchData() {
@@ -150,7 +123,8 @@ const App = () => {
 					<div className="container has-text-centered">
 						<h1
 							className="title is-size-1"
-							style={{ fontFamily: "Permanent Marker", color: "#ffd519e0" }}>
+							style={{ fontFamily: "Permanent Marker", color: "#ffd519e0" }}
+						>
 							Crypto Dash
 						</h1>
 					</div>
