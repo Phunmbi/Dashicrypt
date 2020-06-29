@@ -1,0 +1,30 @@
+// Set your brand colors
+
+$yellow: #ffda32;
+$pink: #ea2768;
+$blue: #4174b3;
+$purple: #5a4d88;
+$black: #00171f;
+
+$primary: $yellow;
+$body-color: $black;
+$modal-content-width: 900px;
+
+@import "../node_modules/bulma/bulma.sass";
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+td,
+th {
+  line-height: 50px;
+  text-align: center !important;
+}
+
+.priceIncrease {
+  background-color: #53d06263;
+  transition: background-color 0.4s ease;
+}
+
+.priceDrop {
+  background-color: #ff00244d;
+  transition: background-color 0.4s ease;
+}
