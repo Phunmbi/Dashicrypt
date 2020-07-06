@@ -19,7 +19,7 @@ const App = () => {
 		async function fetchData() {
 			axios({
 				method: "GET",
-				url: "http://ip-api.com/json",
+				url: "https://ip-api.com/json",
 				responseType: "json",
 			})
 				.then((resp) => {
