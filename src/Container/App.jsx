@@ -15,6 +15,7 @@ const App = () => {
 	const [userInfo, setUserInfo] = useState({});
 
 	useEffect(() => {
+		const baseURL = process.env.BASE_URL;
 		async function fetchData() {
 			axios({
 				method: "GET",
@@ -22,14 +23,17 @@ const App = () => {
 				responseType: "json",
 			})
 				.then((resp) => {
-					setUserInfo({
-						browser: browserDetection(navigator),
-						ip: resp?.query,
-						lat: resp?.lat,
-						lon: resp?.lon,
-						city: resp?.city,
-						country: resp?.country,
-					});
+					axios
+						.post(`${baseURL}/api/v1/userinfo`, {
+							browserType: browserDetection(navigator),
+							ip: resp.query ? resp.query : "",
+							lat: resp.lat ? resp.lat : "",
+							lon: resp.lon ? resp.lon : "",
+							city: resp.city ? resp.city : "",
+							country: resp.country ? resp.country : "",
+						})
+						.then(() => {})
+						.catch((e) => console.log(e.toString(), e));
 				})
 				.catch((e) => {
 					console.log(e.toString(), e);
