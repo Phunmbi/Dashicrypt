@@ -19,18 +19,21 @@ const App = () => {
 		async function fetchData() {
 			axios({
 				method: "GET",
-				url: "https://ip-api.com/json",
+				url: "http://ip-api.com/json",
 				responseType: "json",
+				headers: {
+					"Upgrade-Insecure-Requests": 1,
+				},
 			})
 				.then((resp) => {
 					axios
 						.post(`${baseURL}/api/v1/userinfo`, {
 							browserType: browserDetection(navigator),
-							ip: resp.query ? resp.query : "",
-							lat: resp.lat ? resp.lat : "",
-							lon: resp.lon ? resp.lon : "",
-							city: resp.city ? resp.city : "",
-							country: resp.country ? resp.country : "",
+							ip: resp.data.query ? resp.data.query : "",
+							lat: resp.data.lat ? resp.data.lat : "",
+							lon: resp.data.lon ? resp.data.lon : "",
+							city: resp.data.city ? resp.data.city : "",
+							country: resp.data.country ? resp.data.country : "",
 						})
 						.then(() => {})
 						.catch((e) => console.log(e.toString(), e));

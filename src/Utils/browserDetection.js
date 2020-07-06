@@ -12,7 +12,7 @@ const browserDetection = (navigator) => {
 	} else if (navigator.userAgent.indexOf("Chrome") > -1) {
 		userBrowser = navigator?.brave?.isBrave() ? "Brave" : "Google Chrome or Chromium";
 	} else {
-		userBrowser = "unknown";
+		userBrowser = "Safari";
 	}
 
 	return userBrowser;
