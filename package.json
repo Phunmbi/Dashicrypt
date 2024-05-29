@@ -1,7 +1,7 @@
 {
-	"name": "bantu-app",
+	"name": "dashicrypt",
 	"version": "1.0.0",
-	"description": "a cryptocurrency dashboard",
+	"description": "a cryptocurrency dashboard of the top 100 cryptocurrencies by market cap",
 	"main": "index.js",
 	"scripts": {
 		"start": "parcel src/index.html",
@@ -10,12 +10,12 @@
 	"author": "Adeniyi Adeyokunnu <funmbi.adeyokunnu@gmail.com>",
 	"license": "ISC",
 	"dependencies": {
-		"axios": "^0.19.2",
+		"axios": "^1.7.2",
 		"bulma": "^0.8.2",
 		"lodash": "^4.17.15",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
-		"recharts": "^1.8.5"
+		"recharts": "^2.12.7"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.10.1",
