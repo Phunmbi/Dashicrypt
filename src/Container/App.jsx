@@ -32,9 +32,9 @@ const App = () => {
 
 	useEffect(() => {
 		const clonedAsset = cloneDeep(assetsList);
-		const pricesWs = new WebSocket(
-			"wss://ws.coincap.io/prices?assets=bitcoin,ethereum,monero,litecoin,tether,ripple,bitcoin-cash,bitcoin-sv,binance-coin,eos,cardano,tezos,stellar,chainlink,unus-sed-leo,tron,huobi-token,neo,ethereum-classic,cosmos,dash,usd-coin,iota,zcash,maker,nem,ontology,vechain,basic-attention-token,dogecoin,omisego,paxos-standard-token,digibyte,zilliqa,0x,decred,theta-token,icon,algorand,qtum,lisk,enjin-coin,synthetix-network-token,bitcoin-gold,augur,nano,trueusd,kyber-network,multi-collateral-dai,ravencoin,monacoin,waves,siacoin,holo,status,quant,komodo,wax,verge,crypto-com,dxchain-token,electroneum,steem,bytom,nervos-network,nexo,loopring,energi,unibright,ethlend,iostoken,terra-luna,solve,bitshares,hypercash,republic-protocol,decentraland,maidsafecoin,abbc-coin,golem-network-tokens,ardor,aelf,zcoin,aion,zencash,v-systems,pax-gold,aeternity,power-ledger,streamr-datacoin,bancor,ripio-credit-network,rlc,swissborg,crypterium,stratis,pundi-x,eidoo,kava,waykichain"
-		);
+		const assetsListIds = assetsList.map(each => each.id)
+
+		const pricesWs = new WebSocket(`wss://ws.coincap.io/prices?assets=${assetsListIds}`);
 
 		pricesWs.onmessage = (msg) => {
 			clonedAsset.map((eachAsset) => {
