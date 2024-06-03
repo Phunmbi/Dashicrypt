@@ -19,6 +19,14 @@ th {
   text-align: center !important;
 }
 
+.iconColumn {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 1rem;
+  }
+}
+
 .priceIncrease {
   background-color: #53d06263;
   transition: background-color 0.4s ease;

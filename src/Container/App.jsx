@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { cloneDeep } from "lodash";
-import LoadingGear from "../Assets/loadingGear.svg";
+import LoadingGear from "../assets/loadingGear.svg";
 import Modal from "../Components/Modal";
 import Table from "../Components/Table";
 
