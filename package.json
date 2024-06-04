@@ -1,7 +1,7 @@
 {
   "name": "dashicrypt",
   "version": "1.0.0",
-  "description": "a cryptocurrency dashboard of the top 100 cryptocurrencies by market cap",
+  "description": "cryptocurrency dashboard of the top 100 cryptocurrencies by market cap",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
