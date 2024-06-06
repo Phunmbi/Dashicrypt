@@ -125,7 +125,7 @@ const App = () => {
 							className="title is-size-1"
 							style={{ fontFamily: "Permanent Marker", color: "#ffd519e0" }}
 						>
-							Crypto Dash
+							Dashicrypt
 						</h1>
 					</div>
 					<Table
