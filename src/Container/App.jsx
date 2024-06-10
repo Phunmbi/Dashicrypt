@@ -119,11 +119,11 @@ const App = () => {
 					<img className="image" style={{ margin: "auto" }} src={LoadingGear} alt="" />
 				</div>
 			) : (
-				<section className="section" style={{ backgroundColor: "#003459" }}>
+				<section className="section">
 					<div className="container has-text-centered">
 						<h1
 							className="title is-size-1"
-							style={{ fontFamily: "Permanent Marker", color: "#ffd519e0" }}
+							style={{ fontFamily: "Permanent Marker", color: "#003459" }}
 						>
 							Dashicrypt
 						</h1>

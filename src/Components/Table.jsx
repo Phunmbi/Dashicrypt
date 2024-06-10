@@ -1,5 +1,7 @@
-import React, { Suspense } from "react";
-import LoadingGear from "../assets/loadingGear.svg";
+"use client"
+
+import React from "react";
+import Icon from "react-crypto-icons";
 
 const Table = ({ assetsList, handleClick, loadingHistory }) => {
   return (
@@ -16,6 +18,7 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
           <tr style={{ backgroundColor: "#5348562e" }}>
             <th>Rank</th>
             <th>Symbol</th>
+            <th>Icon</th>
             <th>Full Name</th>
             <th>Current Price</th>
             <th>Price Chart (7 days)</th>
@@ -25,6 +28,7 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
           <tr style={{ backgroundColor: "#5348562e" }}>
             <th>Rank</th>
             <th>Symbol</th>
+            <th>Icon</th>
             <th>Full Name</th>
             <th>Current Price</th>
             <th>Price Chart (7 days)</th>
@@ -32,9 +36,6 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
         </tfoot>
         <tbody>
           {assetsList.map((eachCoin) => {
-            const iconSVG = `./node_modules/cryptocurrency-icons/svg/color/${eachCoin.symbol.toLowerCase()}.svg`
-            // const Logo = React.lazy(() => import(iconSVG));
-
             return (
               <tr key={eachCoin.id} id={`${eachCoin.id}`}>
                 <td>
@@ -43,15 +44,11 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
                 <td>
                   <strong>{eachCoin.symbol}</strong>
                 </td>
-                <td className="iconColumn">
-                  {/* <Suspense  fallback={
-                  <div className="container is-flex" style={{ height: "100vh" }}>
-                    <img className="image" style={{ margin: "auto" }} src={LoadingGear} alt="" />
-                  </div>
-                }> */}
-                    <strong>{eachCoin.name}</strong>
-                    {/* <Logo />
-                  </Suspense> */}
+                <td>
+                  <Icon name={`${eachCoin.symbol.toLowerCase()}`} size={25}/>
+                </td>
+                <td>
+                  <strong>{eachCoin.name}</strong>
                 </td>
                 <td data-tooltip="Tooltip content">
                   <strong>
