@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { cloneDeep } from "lodash";
-import LoadingGear from "../assets/loadingGear.svg";
 import Modal from "../Components/Modal";
 import Table from "../Components/Table";
+import LoadingGear from "../assets/LoadingGear";
 
 const App = () => {
 	const [assetsList, setAssetsList] = useState([]);
@@ -116,7 +116,7 @@ const App = () => {
 		<>
 			{assetsList.length < 1 ? (
 				<div className="container is-flex" style={{ height: "100vh" }}>
-					<img className="image" style={{ margin: "auto" }} src={LoadingGear} alt="" />
+					<LoadingGear />
 				</div>
 			) : (
 				<section className="section">

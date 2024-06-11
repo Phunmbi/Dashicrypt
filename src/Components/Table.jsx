@@ -45,7 +45,7 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
                   <strong>{eachCoin.symbol}</strong>
                 </td>
                 <td>
-                  <TokenIcon symbol={`${eachCoin.symbol}`} size={40} variant="branded" />
+                  <TokenIcon symbol={`${eachCoin.symbol}`} size={64} variant="branded" />
                 </td>
                 <td>
                   <strong>{eachCoin.name}</strong>
