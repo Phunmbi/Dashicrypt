@@ -10,6 +10,7 @@ $primary: $yellow;
 $body-color: $black;
 $modal-content-width: 900px;
 
+
 @import "../node_modules/bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
@@ -35,4 +36,19 @@ th {
 .priceDrop {
   background-color: #ff00244d;
   transition: background-color 0.4s ease;
+}
+
+
+@media screen and (max-width: 630px) {
+  .section {
+    padding: 0.5rem 0;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .recharts-wrapper {
+    height: 100% !important;
+    width: 100% !important;
+  }
 }

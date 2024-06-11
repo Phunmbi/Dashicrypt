@@ -21,7 +21,7 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
             <th>Icon</th>
             <th>Full Name</th>
             <th>Current Price</th>
-            <th>Price Chart (7 days)</th>
+            <th>Price History</th>
           </tr>
         </thead>
         <tfoot>
@@ -31,7 +31,7 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
             <th>Icon</th>
             <th>Full Name</th>
             <th>Current Price</th>
-            <th>Price Chart (7 days)</th>
+            <th>Price History</th>
           </tr>
         </tfoot>
         <tbody>
