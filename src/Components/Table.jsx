@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import Icon from "react-crypto-icons";
+import { TokenIcon } from "@token-icons/react"
 
 const Table = ({ assetsList, handleClick, loadingHistory }) => {
   return (
@@ -45,7 +45,7 @@ const Table = ({ assetsList, handleClick, loadingHistory }) => {
                   <strong>{eachCoin.symbol}</strong>
                 </td>
                 <td>
-                  <Icon name={`${eachCoin.symbol.toLowerCase()}`} size={25}/>
+                  <TokenIcon symbol={`${eachCoin.symbol}`} size={40} variant="branded" />
                 </td>
                 <td>
                   <strong>{eachCoin.name}</strong>
