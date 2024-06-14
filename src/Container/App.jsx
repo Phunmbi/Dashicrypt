@@ -9,7 +9,7 @@ const App = () => {
 	const [assetsList, setAssetsList] = useState([]);
 	const [openModal, setOpenModal] = useState(false);
 	const [history, setHistory] = useState([]);
-	const [openId, setOpenId] = useState("");
+	const [data, setData] = useState({});
 	const [loadingHistory, setLoadingHistory] = useState(false);
 
 	useEffect(() => {
@@ -97,6 +97,7 @@ const App = () => {
 
 	const handleClick = (e) => {
 		const id = e.target.parentNode.id;
+		const data = assetsList.filter(each => each.id === id)[0]
 
 		setLoadingHistory(true);
 		axios({
@@ -105,7 +106,7 @@ const App = () => {
 			responseType: "json",
 		}).then((resp) => {
 			const last7 = resp.data.data.reverse().splice(0, 7).reverse();
-			setOpenId(id);
+			setData(data);
 			setHistory(last7);
 			setLoadingHistory(false);
 			setOpenModal(true);
@@ -135,7 +136,7 @@ const App = () => {
 					/>
 				</section>
 			)}
-			{openModal && <Modal openId={openId} handleClose={handleClose} History={history} />}
+			{openModal && <Modal handleClose={handleClose} History={history} data={data}/>}
 		</>
 	);
 };

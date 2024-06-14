@@ -15,8 +15,8 @@ const renderLineChart = ({ History }) => {
 				height={400}
 				data={cloneHistory}
 				margin={{ top: 10, right: 20, bottom: 5, left: 0 }}>
-				<Line type="monotone" dataKey="priceUsd" stroke="#ea2768" />
-				<CartesianGrid strokeDasharray="3 3" />
+				<Line type="monotone" dataKey="priceUsd" stroke="#4174b3" />
+				<CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
 				<XAxis dataKey="date" padding={{ left: 10 }} />
 				<YAxis unit="$" />
 				<Tooltip />
