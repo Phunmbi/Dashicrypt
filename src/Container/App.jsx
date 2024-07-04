@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { cloneDeep } from "lodash";
+import { ErrorBoundary } from "react-error-boundary";
 import Modal from "../Components/Modal";
 import Table from "../Components/Table";
 import LoadingGear from "../assets/LoadingGear";
@@ -114,7 +117,7 @@ const App = () => {
 	};
 
 	return (
-		<>
+		<ErrorBoundary fallback={<div>Something went wrong</div>}>
 			{assetsList.length < 1 ? (
 				<div className="container is-flex" style={{ height: "100vh" }}>
 					<LoadingGear />
@@ -137,7 +140,7 @@ const App = () => {
 				</section>
 			)}
 			{openModal && <Modal handleClose={handleClose} History={history} data={data}/>}
-		</>
+		</ErrorBoundary>
 	);
 };
 
